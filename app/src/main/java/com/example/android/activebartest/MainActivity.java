@@ -13,15 +13,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
-        toolbar.setTitle("Title Test");
-        setSupportActionBar(toolbar);
+        if (toolbar != null) {
+            toolbar.setTitle("Title Test");
+            setSupportActionBar(toolbar);
+        }
 }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(Menu.NONE,0,1,"menu1");
-        menu.add(Menu.NONE,0,3,"menu2");
-        menu.add(Menu.NONE,0,2,"menu3");
+//        menu.add(Menu.NONE,0,1,"menu1");
+//        menu.add(Menu.NONE,0,3,"menu2");
+//        menu.add(Menu.NONE,0,2,"menu3");
+        getMenuInflater().inflate(R.menu.menu_list, menu);
         return  true;
     }
 }
